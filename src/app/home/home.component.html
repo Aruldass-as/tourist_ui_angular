@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav justify-content-between">
+        <a class="nav-item nav-link" routerLink="/home">Home</a>
+    </div>
+    <div class="navbar-nav justify-content-between">
+      <a class="nav-item nav-link" routerLink="/signup">Signup</a>
+    </div>
+     <div>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+     </div>
+</nav> 
+
+<div *ngIf="!userList || userList.length == 0">No Data Available</div>
+
+<div *ngIf="!!userList && userList.length > 0">
+  List of customers
+<div *ngFor="let user of userList; let i = index">
+  {{i+1}}-{{user.id}}-{{user.firstName}}-{{user.lastName}}--{{user.age}}-{{user.gender}}-{{user.numberOfDays}}-{{user.fromPlace}}
+</div>
+</div>

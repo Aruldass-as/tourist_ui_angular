@@ -1,0 +1,99 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card p-12">
+                <h1>Sign-Up Page</h1>
+                <div class="register-form">
+                    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }"/>
+                        <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                            <div *ngIf="f.id.errors.required">ID is required</div>
+                            <div *ngIf="f.id.errors.minlength">ID must be at least 4 characters</div>
+                            <div *ngIf="f.id.errors.maxlength">ID must not exceed 4 characters</div>
+                            <div *ngIf="f.id.errors.pattern">ID only accept numbers</div>
+                
+                        </div>
+                      </div>
+                
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                          <div *ngIf="f.firstName.errors.minlength">First Name must be at least 1 characters</div>
+                          <div *ngIf="f.firstName.errors.maxlength">First Name must not exceed 15 characters</div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                          <div *ngIf="f.lastName.errors.minlength">Last Name must be at least 1 characters</div>
+                          <div *ngIf="f.lastName.errors.maxlength">Last Name must not exceed 12 characters</div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <label>Gender</label>
+                        <!-- <input type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"/> -->
+                        <!-- <div class="form-group"> -->
+                          <label for="gender">Gender</label>
+                          <div class="radio">
+                              <label>
+                                  <input type="radio" name="gender" formControlName="gender" value=Male>Male
+                              </label>
+                          </div>
+                          <div class="radio">
+                              <label>
+                                  <input type="radio" name="gender" formControlName="gender" value=Female>Female
+                              </label>
+                          </div>
+                      <!-- </div> -->
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                          <div *ngIf="f.gender.errors.required">Gender is required</div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <label>Age</label>
+                        <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }"/>
+                        <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+                          <div *ngIf="f.age.errors.required">Age is required</div>
+                          <div *ngIf="f.age.errors.minlength">Age must be at least 1 characters</div>
+                          <div *ngIf="f.age.errors.maxlength">Age must not exceed 2 characters</div>
+                          <div *ngIf="f.age.errors.pattern">Age only accept numbers</div>
+                          <div *ngIf="f.age.errors.max">Age should not more than 90</div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <label>From Place</label>
+                        <input type="text" formControlName="fromPlace" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fromPlace.errors }"/>
+                        <div *ngIf="submitted && f.fromPlace.errors" class="invalid-feedback">
+                          <div *ngIf="f.fromPlace.errors.required">From Place is required</div>
+                        </div>
+                      </div>
+                
+                      <div class="form-group">
+                        <label>No of Days</label>
+                        <input type="text" formControlName="numberOfDays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numberOfDays.errors }"/>
+                        <div *ngIf="submitted && f.numberOfDays.errors" class="invalid-feedback">
+                          <div *ngIf="f.numberOfDays.errors.required">No of Days is required</div>
+                          <div *ngIf="f.numberOfDays.errors.pattern">No of Days only accept numbers</div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+  
